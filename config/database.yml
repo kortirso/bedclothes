@@ -1,0 +1,19 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  port: 5432
+  username: <%= ENV['BEDCLOTHES_DATABASE_USERNAME'] %>
+  password: <%= ENV['BEDCLOTHES_DATABASE_PASSWORD'] %>
+
+development:
+  <<: *default
+  database: bedclothes_development
+
+test:
+  <<: *default
+  database: bedclothes_test
+
+production:
+  <<: *default
+  database: bedclothes_production
