@@ -1,5 +1,6 @@
 require 'babosa'
 
+# represent articles
 class Article < ApplicationRecord
     extend FriendlyId
 

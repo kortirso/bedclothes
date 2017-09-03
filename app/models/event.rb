@@ -1,3 +1,4 @@
+# represents events and discounts
 class Event < ApplicationRecord
     has_many :products
 

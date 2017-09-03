@@ -1,3 +1,4 @@
+# creates order
 class CreateOrderService
     def self.call(params)
         order = Order.create params[:order]

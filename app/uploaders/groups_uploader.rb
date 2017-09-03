@@ -1,3 +1,4 @@
+# represents uploader for categories
 class GroupsUploader < CarrierWave::Uploader::Base
     include CarrierWave::RMagick
 
@@ -10,6 +11,6 @@ class GroupsUploader < CarrierWave::Uploader::Base
     process resize_to_fill: [250, 250]
 
     def extension_white_list
-        %w(jpg png jpeg)
+        %w[jpg png jpeg]
     end
 end

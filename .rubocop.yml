@@ -4,12 +4,14 @@ AllCops:
     - '**/config.ru'
   Exclude:
     - db/schema.rb
+    - db/migrate/*
     - config.ru
     - lib/**/*.rake
     - vendor/**/*
     - bin/*
     - node_modules/**/*
     - spec/controllers/tasks_controller_spec.rb
+    - config/deploy/production.rb
 
 Metrics/AbcSize:
   Enabled: false
