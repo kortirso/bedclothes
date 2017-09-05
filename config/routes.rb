@@ -1,7 +1,6 @@
 Rails.application.routes.draw do
     namespace :api do
         namespace :v1 do
-            resources :products, only: %i[create update destroy]
         end
     end
 
@@ -19,10 +18,8 @@ Rails.application.routes.draw do
     end
 
     scope controller: :pages do
-        get 'instructions' => :instructions, as: :instructions
         get 'reviews' => :reviews, as: :reviews
         get 'feedback' => :feedback, as: :feedback
-        get 'tailor' => :tailor, as: :tailor
     end
 
     root to: 'welcome#index'

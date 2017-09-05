@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Neucha&subset=cyrillic');
+@import url('https://fonts.googleapis.com/css?family=PT+Serif&subset=cyrillic');
 
 @mixin scroll-bar {
     &::-webkit-scrollbar {
@@ -17,7 +17,7 @@
 }
 
 * {
-    font-family: 'Neucha', sans-serif !important;
+    font-family: 'PT Serif', sans-serif !important;
     font-size: 20px;
 }
 
@@ -29,7 +29,7 @@ html, body {
 
 body {
     position: relative;
-    background: #FDFDBF;
+    background: #EEE;
     @include scroll-bar;
 }
 
@@ -42,7 +42,7 @@ body {
 
 #header {
     height: 80px;
-    background: #FCC7BF;
+    background: #EEE;
     padding-top: 15px;
     position: absolute;
     top: 0;
@@ -62,32 +62,31 @@ body {
         margin: 0;
         text-align: center;
     }
-    .head {
-        color: #282723;
-        font-size: 16px;
-    }
-    .text {
-        color: #282723;
-        font-weight: 500;
+    .head, .text {
+        color: #000;
+        font-size: 15px;
     }
 }
 
-.menu-centered {
-    padding-top: 20px;
-    margin-bottom: 20px;
-    .menu {
-        background: #FFF;
-        box-shadow: 0 2px 3px 2px #76BBFA;
-        a {
-            color: #645f69;
-            font-size: 18px;
-            text-transform: uppercase;
-            padding: 16px 25px 14px;
-            &:hover {
-                color: #909090;
-            }
-            &.active {
-                color: #76BBFA;
+nav {
+    text-align: center;
+    .menu-centered {
+        padding-top: 20px;
+        margin-bottom: 20px;
+        display: inline-block;
+        .menu {
+            background: #000;
+            a {
+                color: #FFF;
+                font-size: 16px;
+                text-transform: uppercase;
+                padding: 16px 25px 14px;
+                &:hover {
+                    color: #AAA;
+                }
+                &.active {
+                    color: #AAA;
+                }
             }
         }
     }
@@ -95,7 +94,8 @@ body {
 
 #footer {
     width: 100%;
-    background: #fcc7bf;
+    background: #FFF;
+    color: #000;
     position: absolute;
     bottom: 0;
     left: 0;
@@ -114,12 +114,16 @@ body {
     }
 }
 
+.main_content {
+    background: #FFF;
+}
+
 .big_block.row {
     margin: 40px 0 70px;
 }
 
 h2 {
-    color: #ef767d;
+    color: #000;
     font-size: 30px;
     text-align: center;
     position: relative;
@@ -128,7 +132,7 @@ h2 {
     &:after {
         position: absolute;
         content: '';
-        background: #76BBFA;
+        background: #ff463b;
         width: 100px;
         height: 2px;
         bottom: 0;
@@ -276,7 +280,7 @@ h2 {
     top: 0;
     right: 0;
     padding: 10px 15px;
-    background: #ef767d;
+    background: #ff463b;
     color: #010101;
     z-index: 3;
 }
