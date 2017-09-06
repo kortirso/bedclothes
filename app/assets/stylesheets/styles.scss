@@ -235,22 +235,23 @@ h2 {
     }
 }
 
-.sling_block {
+.cloth_block {
     margin-bottom: 20px;
     text-align: center;
-    .sling_image {
-        height: 220px;
+    .cloth_image {
+        height: 200px;
         padding: 10px;
         img {
             max-height: 100%;
         }
     }
-    .sling_text {
+    .cloth_text {
         padding: 15px;
-        .sling_name {
+        .cloth_name {
             color: #010101;
+            font-size: 16px;
         }
-        .sling_price {
+        .cloth_price {
             color: #010101;
             margin-bottom: 5px;
         }
@@ -259,19 +260,19 @@ h2 {
 
 .button.price_button {
     padding: 12px 25px;
-    background: #e17a7b;
+    background: #ff463b;
     color: #FFF !important;
     margin-bottom: 0;
     font-size: 18px;
     &:hover {
-        background: #ba6566;
+        background: #ff1e1e;
     }
 }
 
 .link {
-    color: #e17a7b;
+    color: #ff463b;
     &:hover {
-        color: #ba6566;
+        color: #ff1e1e;
     }
 }
 
@@ -291,13 +292,13 @@ h2 {
         margin-bottom: 2px;
         width: 100%;
         text-align: left;
-        background: #e17a7b;
+        background: #ff463b;
         font-size: 18px;
         &.active {
-            background: #ba6566;
+            background: #ff1e1e;
         }
         &:hover {
-            background: #ba6566;
+            background: #ff1e1e;
         }
     }
 }
@@ -311,7 +312,7 @@ h2 {
 
 .block {
     background: #f7f8fc;
-    box-shadow: 0 5px 10px 2px #9DC719;
+    box-shadow: 0 1px 5px 2px #CCC;
     text-align: center;
 }
 
