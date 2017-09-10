@@ -1,8 +1,12 @@
-nav
-    .menu-centered
-        ul.menu
-            li= link_to 'Главная', root_path, class: "#{'active' if yield(:path) == 'root' }"
-            li= link_to 'Каталог', categories_path, class: "#{'active' if yield(:path) == 'catalog' }"
-            li= link_to 'Статьи', articles_path, class: "#{'active' if yield(:path) == 'articles' }"
-            li= link_to 'Отзывы', reviews_path, class: "#{'active' if yield(:path) == 'reviews' }"
-            li= link_to 'Обратная связь', feedback_path, class: "#{'active' if yield(:path) == 'feedback' }"
+nav.nav role='navigation'
+  .nav_block
+    .title-bar data-responsive-toggle='example-menu'
+        button.menu-icon type='button' data-toggle='example-menu'
+    .top-bar#example-menu
+        .top-bar-left
+            ul.menu.dropdown.vertical.medium-horizontal data-dropdown-menu=''
+                li= link_to 'Главная', root_path, class: "#{'active' if yield(:path) == 'root' }"
+                li= link_to 'Каталог', categories_path, class: "#{'active' if yield(:path) == 'catalog' }"
+                li= link_to 'Статьи', articles_path, class: "#{'active' if yield(:path) == 'articles' }"
+                li= link_to 'Отзывы', reviews_path, class: "#{'active' if yield(:path) == 'reviews' }"
+                li= link_to 'Обратная связь', feedback_path, class: "#{'active' if yield(:path) == 'feedback' }"

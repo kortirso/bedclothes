@@ -1,82 +1,104 @@
 - provide(:path, 'root')
-.row.big_block.about_block
+.big_block.about_block
     = image_tag 'develop.png', class: 'develop_image'
     h2 Интернет-магазин
     p Все виды постельного белья
-.row.big_block.categories_block
+    .products_slider
+        section#dg-container.dg-container
+            .dg-wrapper
+                .slide
+                    .img= image_tag Product.first.product_link
+                    .text Описание 1
+                .slide
+                    .img= image_tag Product.first.product_link
+                    .text Описание 2
+                .slide
+                    .img= image_tag Product.first.product_link
+                    .text Описание 3
+                .slide
+                    .img= image_tag Product.first.product_link
+                    .text Описание 4
+            nav
+                span.arrows.dg-prev
+            nav
+                span.arrows.dg-next
+.big_block
     h2 Категории товаров
-    - @categories.each do |category|
-        .columns.small-6.medium-4.large-3.end
-            = link_to category do
-                .category_block.block
-                    .category_image
-                        = image_tag category.image
-                    .category_text
-                        h3= category.name
-                        p= category.caption
-.row.big_block
-    h2 Статьи
-    - @articles.each do |article|
-        .columns.small-6.medium-4.end
-            .article_block
-                p= link_to article.name, article, class: 'link'
-                p= article.caption.truncate(200)
-                span= link_to 'читать далее...', article, class: 'link'
-.row.big_block
+    .row
+        - @categories.each do |category|
+            .columns.small-6.medium-4.large-3.end
+                = link_to category do
+                    .category_block.block
+                        .category_image
+                            = image_tag category.image
+                        .category_text
+                            h3= category.name
+.big_block
     h2 Почему стоит выбрать именно нас?
-    .columns.small-12.medium-4
-        .advance_block
-            .advance_image
-                = image_tag 'galochka.png'
-            .advance_text
-                h3 Причина 1
-                p Объяснение 1
-    .columns.small-12.medium-4
-        .advance_block
-            .advance_image
-                = image_tag 'galochka.png'
-            .advance_text
-                h3 Причина 2
-                p Объяснение 2
-    .columns.small-12.medium-4
-        .advance_block
-            .advance_image
-                = image_tag 'galochka.png'
-            .advance_text
-                h3 Причина 3
-                p Объяснение 3
-.row.big_block
+    .row
+        .columns.small-12.medium-4
+            .advance_block
+                .advance_image
+                    = image_tag 'galochka.png'
+                .advance_text
+                    h3 Причина 1
+                    p Объяснение 1
+        .columns.small-12.medium-4
+            .advance_block
+                .advance_image
+                    = image_tag 'galochka.png'
+                .advance_text
+                    h3 Причина 2
+                    p Объяснение 2
+        .columns.small-12.medium-4
+            .advance_block
+                .advance_image
+                    = image_tag 'galochka.png'
+                .advance_text
+                    h3 Причина 3
+                    p Объяснение 3
+.big_block
     h2 Отзывы наших клиентов
-    .columns.small-12
-        .columns.small-12.medium-6.large-3.end
-            .review_block
-                .review_icon
-                .review_author
-                    .author_image= image_tag 'reviews/makarova.jpg'
-                    .author_name Дарья Макарова
-                .review_text
-                    p Отзыв 1
-        .columns.small-12.medium-6.large-3.end
-            .review_block
-                .review_icon
-                .review_author
-                    .author_image= image_tag 'reviews/timoshechkina.jpg'
-                    .author_name Марина Тимошечкина
-                .review_text
-                    p Отзыв 2
-        .columns.small-12.medium-6.large-3.end
-            .review_block
-                .review_icon
-                .review_author
-                    .author_image= image_tag 'reviews/smirnova.jpg'
-                    .author_name Вика Смирнова
-                .review_text
-                    p Отзыв 3
-        .columns.small-12.medium-6.large-3.end
-            .review_block
-                .review_icon
-                .review_author
-                    .author_image= image_tag 'reviews/zhuravleva.jpg'
-                    .author_name Анна Журавлева
-                .review_text
-                    p Отзыв 4
+    .row
+        .columns.small-12
+            .columns.small-12.medium-6.large-3.end
+                .review_block
+                    .review_icon
+                    .review_author
+                        .author_image= image_tag 'reviews/makarova.jpg'
+                        .author_name Дарья Макарова
+                    .review_text
+                        p Отзыв 1
+            .columns.small-12.medium-6.large-3.end
+                .review_block
+                    .review_icon
+                    .review_author
+                        .author_image= image_tag 'reviews/timoshechkina.jpg'
+                        .author_name Марина Тимошечкина
+                    .review_text
+                        p Отзыв 2
+            .columns.small-12.medium-6.large-3.end
+                .review_block
+                    .review_icon
+                    .review_author
+                        .author_image= image_tag 'reviews/smirnova.jpg'
+                        .author_name Вика Смирнова
+                    .review_text
+                        p Отзыв 3
+            .columns.small-12.medium-6.large-3.end
+                .review_block
+                    .review_icon
+                    .review_author
+                        .author_image= image_tag 'reviews/zhuravleva.jpg'
+                        .author_name Анна Журавлева
+                    .review_text
+                        p Отзыв 4
+.big_block
+    h2 Статьи
+    .row
+        - @articles.each do |article|
+            .columns.small-6.medium-4.end
+                .article_block
+                    p= link_to article.name, article, class: 'link'
+                    p= article.caption.truncate(200)
+                    span= link_to 'читать далее...', article, class: 'link'

@@ -16,4 +16,8 @@ class ApplicationController < ActionController::Base
     def render_not_found
         render template: 'shared/404', status: 404
     end
+
+    def find_categories
+        @categories = Category.where(main_category_id: nil).order(name: :asc)
+    end
 end

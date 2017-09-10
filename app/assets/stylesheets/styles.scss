@@ -1,8 +1,10 @@
-@import url('https://fonts.googleapis.com/css?family=PT+Serif&subset=cyrillic');
+@import url('https://fonts.googleapis.com/css?family=Roboto:100,300,400,500&subset=cyrillic');
 
 @mixin scroll-bar {
     &::-webkit-scrollbar {
         width: 8px;
+        background: #f0f0f0;
+        -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.1);
     }
     &::-webkit-scrollbar-track {
         -webkit-border-radius: 6px;
@@ -11,14 +13,15 @@
     &::-webkit-scrollbar-thumb {
         -webkit-border-radius: 6px;
         border-radius: 6px;
-        background: #e6e6e6;
+        background: #e0e0e0;
         -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
     }
 }
 
 * {
-    font-family: 'PT Serif', sans-serif !important;
+    font-family: 'Roboto', sans-serif !important;
     font-size: 20px;
+    font-weight: 300;
 }
 
 html, body {
@@ -27,65 +30,82 @@ html, body {
     height: 100%;
 }
 
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Roboto';
+    line-height: 1;
+    font-weight: 100;
+    color: #000;
+}
+
 body {
     position: relative;
-    background: #EEE;
+    background: #FFF;
     @include scroll-bar;
 }
 
 .content {
     position: relative;
     min-height: 100%;
-    padding-bottom: 140px;
-    padding-top: 80px;
+    padding: 50px 0 140px;
+    @media screen and (max-width: 1023px) {
+        padding: 50px 10px 140px;
+    }
 }
 
-#header {
-    height: 80px;
-    background: #EEE;
-    padding-top: 15px;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 2;
-    #logo {
-        position: absolute;
-        left: 50px;
-        top: 0;
-        height: 87px;
-        img {
-            max-height: 100%;
+nav.nav {
+    border-bottom: 1px solid #ececec;
+    padding: 28px 0;
+    @media (max-width: 1023px) {
+        padding: 28px 10px;
+    }
+    @media (max-width: 639px) {
+        padding: 0 10px;
+    }
+    .nav_block {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+    .title-bar {
+        background: #FFF;
+        display: none !important;
+        @media (max-width: 639px) {
+            display: block !important;
         }
     }
-    p {
-        margin: 0;
-        text-align: center;
-    }
-    .head, .text {
-        color: #000;
-        font-size: 15px;
-    }
-}
-
-nav {
-    text-align: center;
-    .menu-centered {
-        padding-top: 20px;
-        margin-bottom: 20px;
-        display: inline-block;
-        .menu {
-            background: #000;
-            a {
-                color: #FFF;
-                font-size: 16px;
-                text-transform: uppercase;
-                padding: 16px 25px 14px;
-                &:hover {
-                    color: #AAA;
+    .top-bar {
+        background: #FFF;
+        padding: 0;
+        display: block !important;
+        @media (max-width: 639px) {
+            display: none !important;
+        }
+        .top-bar-left {
+            ul {
+                background: #FFF;
+                position: relative;
+                padding: 12px 50px 10px;
+                @media (max-width: 639px) {
+                    padding: 12px 0 10px;
                 }
-                &.active {
-                    color: #AAA;
+                li {
+                    &.logo {
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                    }
+                    a {
+                        padding: 0;
+                        margin-right: 33px;
+                        text-transform: uppercase;
+                        font-size: 14px;
+                        color: #000;
+                        &.active {
+                            color: #AAA;
+                        }
+                        &:hover {
+                            color: #AAA;
+                        }
+                    }
                 }
             }
         }
@@ -100,6 +120,7 @@ nav {
     bottom: 0;
     left: 0;
     padding: 10px;
+    border-top: 1px solid #ececec;
     h4 {
         font-size: 20px;
     }
@@ -118,13 +139,19 @@ nav {
     background: #FFF;
 }
 
-.big_block.row {
-    margin: 40px 0 70px;
+.big_block {
+    margin: 0 0 75px;
+    .row {
+        margin: 0;
+    }
+}
+
+h1 {
+    font-size: 50px;
 }
 
 h2 {
-    color: #000;
-    font-size: 30px;
+    font-size: 40px;
     text-align: center;
     position: relative;
     padding-bottom: 10px;
@@ -141,6 +168,10 @@ h2 {
     }
 }
 
+.products_slider {
+    margin-top: 50px;
+}
+
 .category_block {
     margin-bottom: 40px;
     .category_image {
@@ -148,21 +179,17 @@ h2 {
         padding: 10px;
         img {
             max-height: 100%;
+            max-width: 100%;
         }
     }
     .category_text {
-        padding: 0 20px 10px;
-        height: 106px;
+        padding: 20px;
         h3 {
             text-align: center;
             font-size: 20px;
-            font-weight: 400;
+            font-weight: 300;
             color: #010101;
-        }
-        p {
-            text-align: center;
             margin: 0;
-            color: #898a8a;
         }
     }
 }
@@ -179,11 +206,10 @@ h2 {
     .advance_text {
         h3 {
             text-align: center;
-            font-size: 22px;
-            font-weight: 500;
+            font-size: 24px;
+            font-weight: 300;
             margin-bottom: 20px;
-            color: #282723;
-            text-decoration: underline;
+            color: #010101;
         }
         p {
             text-align: center;
@@ -314,6 +340,7 @@ h2 {
     background: #f7f8fc;
     box-shadow: 0 1px 5px 2px #CCC;
     text-align: center;
+    border-radius: 3px;
 }
 
 table {
@@ -514,6 +541,33 @@ table {
 }
 
 @media screen and (max-width: 639px) {
+    body {
+        nav {
+            padding: 0;
+            .title-bar {
+                .menu-icon {
+                    &:after {
+                        background: #000;
+                        box-shadow: 0 7px 0 #000, 0 14px 0 #000;
+                    }
+                }
+            }
+            .top-bar {
+                .top-bar-left {
+                    ul {
+                        padding: 12px 0 10px;
+                        li {
+                            margin-bottom: 10px;
+                            &.logo {
+                                display: none;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
     .catalog_nav {
         margin-top: 0;
     }

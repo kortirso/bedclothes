@@ -10,4 +10,4 @@
         .products.row
             - unless @products.size.zero?
                 - @products.each do |product|
-                    = render 'shared/welcome_product', product: product
+                    = render 'shared/product', product: product

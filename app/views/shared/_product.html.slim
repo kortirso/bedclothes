@@ -5,5 +5,7 @@
                 = image_tag product.product_link
             .cloth_text
                 .cloth_name= product.name.truncate(20)
-                .cloth_price= "#{product.price} руб."
+                .cloth_price
+                    = "#{product.price} "
+                    | &#8381;
                 = button_to 'Купить', positions_path(product_id: product.id), class: 'button price_button', remote: true
