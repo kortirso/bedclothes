@@ -45,7 +45,7 @@ gem 'rmagick'
 
 # Add Webpack
 gem 'foreman'
-gem 'webpacker', '~> 3.0'
+gem 'webpacker', '2.0'
 gem 'webpacker-react', '~> 0.3.1'
 
 # Background Jobs
