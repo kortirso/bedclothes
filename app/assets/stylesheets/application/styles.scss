@@ -39,104 +39,21 @@ h1, h2, h3, h4, h5, h6 {
 
 body {
     position: relative;
-    background: #FFF;
     @include scroll-bar;
 }
 
 .content {
     position: relative;
     min-height: 100%;
-    padding: 50px 0 140px;
+    padding: 0 0 140px;
+    background: $background;
+    overflow: hidden;
+    .main_content {
+        padding-top: 100px;
+    }
     @media screen and (max-width: 1023px) {
-        padding: 50px 10px 140px;
+        padding: 0 10px 140px;
     }
-}
-
-nav.nav {
-    border-bottom: 1px solid #ececec;
-    padding: 28px 0;
-    @media (max-width: 1023px) {
-        padding: 28px 10px;
-    }
-    @media (max-width: 639px) {
-        padding: 0 10px;
-    }
-    .nav_block {
-        max-width: 1200px;
-        margin: 0 auto;
-    }
-    .title-bar {
-        background: #FFF;
-        display: none !important;
-        @media (max-width: 639px) {
-            display: block !important;
-        }
-    }
-    .top-bar {
-        background: #FFF;
-        padding: 0;
-        display: block !important;
-        @media (max-width: 639px) {
-            display: none !important;
-        }
-        .top-bar-left {
-            ul {
-                background: #FFF;
-                position: relative;
-                padding: 12px 50px 10px;
-                @media (max-width: 639px) {
-                    padding: 12px 0 10px;
-                }
-                li {
-                    &.logo {
-                        position: absolute;
-                        top: 0;
-                        left: 0;
-                    }
-                    a {
-                        padding: 0;
-                        margin-right: 33px;
-                        text-transform: uppercase;
-                        font-size: 14px;
-                        color: #000;
-                        &.active {
-                            color: #AAA;
-                        }
-                        &:hover {
-                            color: #AAA;
-                        }
-                    }
-                }
-            }
-        }
-    }
-}
-
-#footer {
-    width: 100%;
-    background: #FFF;
-    color: #000;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    padding: 10px;
-    border-top: 1px solid #ececec;
-    h4 {
-        font-size: 20px;
-    }
-    p {
-        margin-bottom: 3px;
-        font-size: 16px;
-    }
-    img {
-        width: 25px;
-        border-radius: 6px;
-        margin-right: 4px;
-    }
-}
-
-.main_content {
-    background: #FFF;
 }
 
 .big_block {
@@ -284,47 +201,22 @@ h2 {
     }
 }
 
-.button.price_button {
-    padding: 12px 25px;
-    background: #ff463b;
-    color: #FFF !important;
-    margin-bottom: 0;
-    font-size: 18px;
-    &:hover {
-        background: #ff1e1e;
-    }
-}
-
-.link {
-    color: #ff463b;
-    &:hover {
-        color: #ff1e1e;
-    }
-}
-
-#cart {
-    position: fixed;
-    top: 0;
-    right: 0;
-    padding: 10px 15px;
-    background: #ff463b;
-    color: #010101;
-    z-index: 3;
-}
-
 .catalog_nav {
     margin-top: 92px;
+    border-radius: 10px 10px 0 0;
+    overflow: hidden;
     .button {
         margin-bottom: 2px;
         width: 100%;
         text-align: left;
-        background: #ff463b;
+        background: $button-background;
         font-size: 18px;
+        text-shadow: 0 1px 2px $button-text-shadow;
         &.active {
-            background: #ff1e1e;
+            background: $button-background-hover;
         }
         &:hover {
-            background: #ff1e1e;
+            background: $button-background-hover;
         }
     }
 }
@@ -338,7 +230,7 @@ h2 {
 
 .block {
     background: #f7f8fc;
-    box-shadow: 0 1px 5px 2px #CCC;
+    box-shadow: 0 4px 10px 2px #b6b27f;
     text-align: center;
     border-radius: 3px;
 }
@@ -509,13 +401,6 @@ table {
 }
 
 @media screen and (max-width: 700px) {
-    .menu-centered .menu li {
-        display: list-item;
-        a {
-            padding: 10px 25px;
-        }
-    }
-
     .review_block .review_text {
         min-height: auto;
     }
@@ -541,33 +426,6 @@ table {
 }
 
 @media screen and (max-width: 639px) {
-    body {
-        nav {
-            padding: 0;
-            .title-bar {
-                .menu-icon {
-                    &:after {
-                        background: #000;
-                        box-shadow: 0 7px 0 #000, 0 14px 0 #000;
-                    }
-                }
-            }
-            .top-bar {
-                .top-bar-left {
-                    ul {
-                        padding: 12px 0 10px;
-                        li {
-                            margin-bottom: 10px;
-                            &.logo {
-                                display: none;
-                            }
-                        }
-                    }
-                }
-            }
-        }
-    }
-
     .catalog_nav {
         margin-top: 0;
     }

@@ -29,6 +29,7 @@
     background: #FFF;
     padding: 0;
     border-radius: 5px;
+    overflow: hidden;
     box-shadow: 0 0 30px 5px #eaeaea;
 }
 
@@ -70,10 +71,10 @@
 
 .dg-container .arrows.dg-prev {
     left: 0;
-    background: #FFF url('icons/arrow_left.png');
+    background: image-url('icons/arrow_left.png');
 }
 
 .dg-container .arrows.dg-next {
     right: 0;
-    background: #FFF url('icons/arrow_right.png');
+    background: image-url('icons/arrow_right.png');
 }

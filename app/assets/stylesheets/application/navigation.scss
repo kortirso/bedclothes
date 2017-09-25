@@ -1,0 +1,122 @@
+nav.nav {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 28px 0;
+    z-index: 1;
+    @media (max-width: 1023px) {
+        padding: 28px 10px;
+    }
+    @media (max-width: 639px) {
+        padding: 0 10px;
+    }
+    .nav_block {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+    .title-bar {
+        background: none;
+        display: none !important;
+        @media (max-width: 639px) {
+            display: block !important;
+        }
+    }
+    .top-bar {
+        background: none;
+        padding: 0;
+        display: block !important;
+        @media (max-width: 639px) {
+            display: none !important;
+        }
+        .top-bar-left {
+            ul {
+                background: none;
+                position: relative;
+                padding: 12px 50px 10px;
+                @media (max-width: 639px) {
+                    padding: 12px 0 10px;
+                }
+                li {
+                    &.logo {
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                    }
+                    a {
+                        padding: 0;
+                        margin-right: 33px;
+                        text-transform: uppercase;
+                        font-size: 14px;
+                        font-weight: 400;
+                        color: $navigation-link-color;
+                        &.active {
+                            color: $navigation-link-active;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+#footer {
+    width: 100%;
+    background: #FFF;
+    color: #000;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding: 10px;
+    border-top: 1px solid #ececec;
+    h4 {
+        font-size: 20px;
+    }
+    p {
+        margin-bottom: 3px;
+        font-size: 16px;
+    }
+    img {
+        width: 25px;
+        border-radius: 6px;
+        margin-right: 4px;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .menu-centered .menu li {
+        display: list-item;
+        a {
+            padding: 10px 25px;
+        }
+    }
+}
+
+@media screen and (max-width: 639px) {
+    body {
+        nav {
+            padding: 0;
+            .title-bar {
+                .menu-icon {
+                    &:after {
+                        background: #000;
+                        box-shadow: 0 7px 0 #000, 0 14px 0 #000;
+                    }
+                }
+            }
+            .top-bar {
+                .top-bar-left {
+                    ul {
+                        padding: 12px 0 10px;
+                        li {
+                            margin-bottom: 10px;
+                            &.logo {
+                                display: none;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

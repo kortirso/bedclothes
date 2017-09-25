@@ -12,7 +12,6 @@ html
     body
         = render 'shared/navigation'
         .content
-            .row.main_content
-                == yield
+            == yield
             = render 'shared/footer'
         = render 'shared/cart'
